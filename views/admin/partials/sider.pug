@@ -1,0 +1,17 @@
+.sider
+    .inner-menu 
+        ul 
+            li.nav-link(class=currentPage === 'dashboard' ? 'active' : '')
+                i.fa-solid.fa-house
+                a(href=`${prefixAdmin}/dashboard`) Tổng quan
+            li.nav-link(class=currentPage === 'product-category' ? 'active' : '') 
+                i.fa-solid.fa-list
+                a(href=`${prefixAdmin}/products-category`) Bảo trì danh mục
+            li.nav-link(class=currentPage === 'product' ? 'active' : '') 
+                i.fa-solid.fa-mobile
+                a(href=`${prefixAdmin}/products`) Bảo trì sản phẩm
+            li.nav-link() 
+                i.fa-solid.fa-circle-user
+                a(href=`${prefixAdmin}/accounts`) Bảo trì tài khoản
+
+            

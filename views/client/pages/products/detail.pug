@@ -1,0 +1,50 @@
+extends ../../layouts/default.pug
+
+block main
+    div.product-detail
+        div.container.my-5
+            div.row
+                div.col-12
+                    h3.detail-title #{product.title}
+            div.row.my-3
+                div.col-6
+                    div.detail-thumb.text-center
+                        img(src=product.thumbnail alt=product.title)
+                div.col-6
+                    form.form-detail(
+                        action=`/cart/add/${product.id}`
+                        method="POST"
+                    )
+                        div.memory-options
+                            label
+                                input(type="radio" name="memory" value="256GB" checked).mr-1
+                                | 256GB
+                            label.disabled
+                                input(type="radio" name="memory" value="512GB" disabled).mr-1
+                                | 512GB
+                            label.disabled
+                                input(type="radio" name="memory" value="1TB" disabled).mr-1
+                                | 1TB
+                        div.detail-price
+                            div.price-new #{product.priceNew.toLocaleString('vi-VN')}đ
+                            div.price-old #{product.price.toLocaleString('vi-VN')}đ
+                        div.detail-category.mt-3 Danh mục: 
+                            span #{product.product_category_id}
+                        div.detail-discount.mt-1 Giảm giá: 
+                            span #{product.discountPercentage}%
+                        div.detail-stock.mt-3
+                            button.button-left.button-stock -
+                            input(
+                                type="number" 
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                max=product.stock
+                                readonly 
+                            )
+                            button.button-right.button-stock +
+                        button.submit.mt-4(type="submit") THÊM VÀO GIỎ HÀNG
+            div.row
+                div.col-12.detail-des
+                    div.detail-des-title Mô tả sản phẩm
+                    div.detail-description !{product.description}

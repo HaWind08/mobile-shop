@@ -1,0 +1,23 @@
+extends ../../layouts/default.pug
+
+block main
+    if(order)
+        .checkout-success
+            .container
+                .row
+                    .col-12
+                        .success-icon
+                            i.fa-solid.fa-check
+                        h3.success-title Cảm ơn bạn đã mua hàng
+                        p.success-desc Chúng tôi đã nhận được đơn hàng của bạn và sẽ giao hàng trong vòng 5-7 ngày làm việc.
+                        .order-summary
+                            h4.order-summary-title Tóm tắt đơn hàng
+                            each item in order.products
+                                .order-summary-info
+                                    .left-info
+                                        img(src=item.productInfo.thumbnail, alt=item.productInfo.title)
+                                        h5.info-title #{item.productInfo.title}
+                                    .right-info #{item.totalPrice.toLocaleString('vi-VN')}đ
+                            h5.order-summary-total Tổng đơn hàng: #{order.totalPrice.toLocaleString('vi-VN')}đ
+                        a.success-back(href="/") Quay lại trang chủ
+

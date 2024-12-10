@@ -1,0 +1,82 @@
+:root {
+    --color-one: #22313F;
+    --color-two: #be1e2d;
+    --color-three: #EF4444;
+    --color-four: #2F6BFF;
+    --color-five: #52C41A;
+    --color-six: #F9415C;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    
+}
+
+body {
+    background: url("../images/noel-theme-bg2x.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: var(--color-one);
+    transition: all 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-title {
+    color: #444444;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* button */
+.see-all-features {
+    display: inline-block;
+    background: #F3F4F6;
+    border: 1px solid #ddd;
+    color: #444444;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.see-all-product {
+    display: inline-block;
+    background: #F3F4F6;
+    border: 1px solid #ddd;
+    color: #444444;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.see-all-accessory {
+    display: inline-block;
+    background: #F3F4F6;
+    border: 1px solid #ddd;
+    color: #444444;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.see-all-features:hover,
+.see-all-product:hover,
+.see-all-accessory:hover {
+    background: var(--color-six);
+    color: #fff;
+}
+
+/* End button */

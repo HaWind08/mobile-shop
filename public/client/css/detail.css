@@ -1,0 +1,141 @@
+.product-detail,
+.product-page {
+    padding: 100px 0 48px;
+}
+
+.product-page-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E5E7EB;
+    color: var(--color-two);
+}
+
+.memory-options label {
+    margin-right: 30px;
+    margin-bottom: 0;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid var(--color-three);
+    border-radius: 4px;
+    color: red;
+}
+
+.memory-options label input {
+    color: var(--color-three);
+}
+
+.detail-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.detail-thumb,
+.form-detail {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .13);
+    background: #fff;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.detail-thumb img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+}
+
+.form-detail {
+    padding: 16px
+}
+
+.detail-price {
+    padding: 0 8px;
+    border: 1px solid var(--color-three);
+    margin-top: 16px;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    border-radius: 4px;
+    width: 49%;
+    text-align: center;
+}
+
+.detail-price .price-new {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-two);
+}
+
+.detail-price .price-old {
+    text-decoration: line-through;
+}
+
+.detail-category span {
+    color: var(--color-five);
+    font-weight: 700;
+}
+
+.detail-discount span {
+    color: var(--color-four);
+    font-style: italic;
+}
+
+.detail-stock input {
+    width: 80px;
+    border: 1px solid #bbb;
+    cursor: not-allowed;
+    text-align: center;
+}
+
+.detail-stock .button-stock {
+    border: 1px solid #bbb;
+    width: 30px;
+    font-size: 16px;
+}
+
+.detail-stock input:focus-visible {
+    border: 1px solid #bbb;
+    outline: none;
+}
+
+.detail-stock .button-left {
+    margin-right: -5px;
+}
+
+.detail-stock .button-right {
+    margin-left: -5px;
+}
+
+.form-detail .submit {
+    background: var(--color-two);
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 16px 0;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.detail-des {
+    background: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .13);
+}
+
+.detail-des-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-five);
+}
+
+.detail-description {
+    padding: 0 10px;
+}
+
+.memory-options .disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
