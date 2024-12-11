@@ -8,27 +8,27 @@ block main
                 .col-3.pr-3.pl-0
                     ul.category
                         li
-                            a(href="#")
+                            a(href="/products/category/Iphone")
                                 i.fa-brands.fa-apple
                                 span Iphone
                         li
-                            a(href="#")
+                            a(href="/products/category/Samsung")
                                 i.fa-solid.fa-s
                                 span Samsung
                         li
-                            a(href="#")
+                            a(href="/products/category/Xiaomi")
                                 i.fa-brands.fa-xing
                                 span Xiaomi
                         li
-                            a(href="#")
+                            a(href="/products/category/Oppo")
                                 i.fa-brands.fa-opera
                                 span Oppo
                         li
-                            a(href="#")
+                            a(href="/products/category/Tecno")
                                 i.fa-solid.fa-t
                                 span Tecno
                         li
-                            a(href="#")
+                            a(href="/products/category/Realme")
                                 i.fa-solid.fa-registered
                                 span Realme
                         li
@@ -132,82 +132,59 @@ block main
                             .product-left Giảm #{item.discountPercentage}%
                             .product-right Trả góp 0%
 
-    //- accessory
-    div.accessory
+    //- productCategory (Iphone)
+    div.productCategory
         .container-xl.container-lg
             .row.mt-5
                 .col-12.d-flex.justify-content-between.align-items-center
-                    h2.product-title PHỤ KIỆN
-                    a.see-all-accessory(href="#") Xem tất cả
+                    h2.product-title IPHONE CHÍNH HÃNG
+                    a.see-all-productCategory(href="/products/category/Iphone") Xem tất cả
             .row
-                .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
-                    a.accessory-item(href="#")
-                        .accessory-image.text-center
-                            img(src="client/images/cu-sac-nhanh-apple-iphone-20w.avif" alt="")
-                        h3.accessory-name Củ sạc nhanh Apple iPhone 20W Type-C Chính Hãng
-                        .accessory-price
-                            .accessory-price-new 470.000đ
-                            .accessory-price-old 790.000đ
-                        .accessory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
-                        .accessory-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                        .accessory-left Giảm 40%
-                        .accessory-right Trả góp 0%
-                .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
-                    a.accessory-item(href="#")
-                        .accessory-image.text-center
-                            img(src="client/images/cu-sac-nhanh-apple-iphone-20w.avif" alt="")
-                        h3.accessory-name Củ sạc nhanh Apple iPhone 20W Type-C Chính Hãng
-                        .accessory-price
-                            .accessory-price-new 470.000đ
-                            .accessory-price-old 790.000đ
-                        .accessory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
-                        .accessory-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                        .accessory-left Giảm 40%
-                        .accessory-right Trả góp 0%
-                .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
-                    a.accessory-item(href="#")
-                        .accessory-image.text-center
-                            img(src="client/images/cu-sac-nhanh-apple-iphone-20w.avif" alt="")
-                        h3.accessory-name Củ sạc nhanh Apple iPhone 20W Type-C Chính Hãng
-                        .accessory-price
-                            .accessory-price-new 470.000đ
-                            .accessory-price-old 790.000đ
-                        .accessory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
-                        .accessory-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                        .accessory-left Giảm 40%
-                        .accessory-right Trả góp 0%
-                .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
-                    a.accessory-item(href="#")
-                        .accessory-image.text-center
-                            img(src="client/images/cu-sac-nhanh-apple-iphone-20w.avif" alt="")
-                        h3.accessory-name Củ sạc nhanh Apple iPhone 20W Type-C Chính Hãng
-                        .accessory-price
-                            .accessory-price-new 470.000đ
-                            .accessory-price-old 790.000đ
-                        .accessory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
-                        .accessory-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                            i.fa-solid.fa-star
-                        .accessory-left Giảm 40%
-                        .accessory-right Trả góp 0%
+                each item in productIphone
+                    .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
+                        a.productCategory-item(href=`/products/detail/${item.slug}`)
+                            .productCategory-image.text-center
+                                img(src=item.thumbnail alt=item.title)
+                            h3.productCategory-name #{item.title}
+                            .productCategory-price
+                                .productCategory-price-new #{item.priceNew.toLocaleString('vi-VN')}đ
+                                .productCategory-price-old #{item.price.toLocaleString('vi-VN')}đ
+                            .productCategory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
+                            .productCategory-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            .productCategory-left Giảm #{item.discountPercentage}%
+                            .productCategory-right Trả góp 0%
+    
+    //- productCategory (Samsung)
+    div.productCategory
+        .container-xl.container-lg
+            .row.mt-5
+                .col-12.d-flex.justify-content-between.align-items-center
+                    h2.product-title SAMSUNG CHÍNH HÃNG
+                    a.see-all-productCategory(href="/products/category/Samsung") Xem tất cả
+            .row
+                each item in productSamsung
+                    .col-xl-3.col-lg-3.col-md-3.col-sm-6.col-12
+                        a.productCategory-item(href=`/products/detail/${item.slug}`)
+                            .productCategory-image.text-center
+                                img(src=item.thumbnail alt=item.title)
+                            h3.productCategory-name #{item.title}
+                            .productCategory-price
+                                .productCategory-price-new #{item.priceNew.toLocaleString('vi-VN')}đ
+                                .productCategory-price-old #{item.price.toLocaleString('vi-VN')}đ
+                            .productCategory-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
+                            .productCategory-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            .productCategory-left Giảm #{item.discountPercentage}%
+                            .productCategory-right Trả góp 0%
 
     //- customer
     div.customer

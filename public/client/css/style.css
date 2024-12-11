@@ -640,13 +640,13 @@
 /* End product */
 
 
-/* accessory */
-.accessory {
+/* productCategory */
+.productCategory {
     margin-top: 40px;
     border-radius: 8px;
 }
 
-.accessory-item {
+.productCategory-item {
     display: inline-block;
     position: relative;
     background: #fff;
@@ -656,39 +656,39 @@
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
 }
 
-.accessory-item:hover img {
+.productCategory-item:hover img {
     transition: all 0.3s;
     scale: 1.1;
 }
 
-.accessory-item img {
+.productCategory-item img {
     width: 160px;
     height: 160px;
     object-fit: cover;
 }
 
-.accessory-name {
+.productCategory-name {
     font-size: 17px;
     font-weight: 700;
     margin: 24px 0;
 }
 
-.accessory-price {
+.productCategory-price {
     display: flex;
     margin-top: 16px;
 }
 
-.accessory-price-new {
+.productCategory-price-new {
     color: var(--color-two);
     font-weight: 700;
 }
 
-.accessory-price-old {
+.productCategory-price-old {
     text-decoration: line-through;
     margin-left: 10px;
 }
 
-.accessory-coupon {
+.productCategory-coupon {
     font-size: 12px;
     background: #F3F4F6;
     border: 1px solid #ddd;
@@ -697,11 +697,11 @@
     margin: 10px 0 30px;
 }
 
-.accessory-star {
+.productCategory-star {
     color: #F59E0B;
 }
 
-.accessory-left {
+.productCategory-left {
     background: var(--color-two);
     color: #fff;
     position: absolute;
@@ -714,7 +714,7 @@
     font-size: 14px;
 }
 
-.accessory-right {
+.productCategory-right {
     background: #fff;
     color: var(--color-four);
     border: 1px solid var(--color-four);
@@ -729,25 +729,16 @@
     font-size: 12px;
 }
 
-.accessory .pad-right-1,
-.accessory .pad-right-2 {
-    padding-right: 0;
-}
-
-@media (max-width: 767.98px) {
-    
-}
-
 @media (max-width: 575.98px) {
-    .accessory-item {
+    .productCategory-item {
         width: 100%;
     }
 
-    .accessory-coupon {
+    .productCategory-coupon {
         margin-bottom: 16px;
     }
 
-    .accessory-name {
+    .productCategory-name {
         margin: 10px 0;
     }
 }

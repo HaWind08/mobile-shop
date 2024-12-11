@@ -1,0 +1,27 @@
+extends ../../layouts/default.pug 
+
+block main 
+    .product.product-page.mt-5
+        .container-xl.container-lg
+            .row
+                .col-12
+                    h3.product-page-title Điện thoại Oppo chính hãng
+            .row
+                each item in products
+                    .col-xl-3.col-lg-3.col-md-6.col-sm-6.col-12
+                        a.product-item(href=`/products/detail/${item.slug}`)
+                            .product-image.text-center
+                                img(src=item.thumbnail alt=item.title)
+                            h3.product-name #{item.title}
+                            .product-price
+                                .product-price-new #{item.priceNew.toLocaleString('vi-VN')}đ
+                                .product-price-old #{item.price.toLocaleString('vi-VN')}đ
+                            .product-coupon Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn 3-6 tháng
+                            .product-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                                i.fa-solid.fa-star
+                            .product-left Giảm #{item.discountPercentage}%
+                            .product-right Trả góp 0%
