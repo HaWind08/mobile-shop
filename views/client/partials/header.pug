@@ -16,12 +16,20 @@ header.header
                         button(type="submit")
                             i.fa-solid.fa-magnifying-glass
             .col-4.p-0.text-right
-                a.login(href="#")
-                    i.fa-solid.fa-user.mr-1
-                    span.header-text Đăng nhập
-                a.register.ml-2(href="#")
-                    i.fa-solid.fa-user-plus.mr-1
-                    span.header-text Đăng ký
+                if(user)
+                    a.login(href="/user/")
+                        i.fa-solid.fa-user.mr-1
+                        span.header-text Tài khoản
+                    a.register(href="/user/logout").ml-1
+                        i.fa-solid.fa-right-from-bracket.mr-1
+                        span.header-text Đăng xuất
+                else
+                    a.login(href="/user/login")
+                        i.fa-solid.fa-user.mr-1
+                        span.header-text Đăng nhập
+                    a.register(href="/user/register").ml-1
+                        i.fa-solid.fa-user-plus.mr-1
+                        span.header-text Đăng ký
                 a.cart.ml-2(href="/cart")
                     i.fa-solid.fa-cart-shopping.mr-1
                     span.header-text Giỏ hàng (#{miniCart ? miniCart.totalQuantity : 0})
@@ -31,10 +39,10 @@ header.header
                 .logo
                     a.header-logo(href="/") Team Nine
                 .function
-                    a.login(href="#")
+                    a.login(href="/user/login")
                         i.fa-solid.fa-user
                         span.header-text Đăng nhập
-                    a.register(href="#").ml-1
+                    a.register(href="/user/register").ml-1
                         i.fa-solid.fa-user-plus
                         span.header-text Đăng ký
                     a.cart(href="/cart").ml-1

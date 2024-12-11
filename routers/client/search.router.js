@@ -5,7 +5,4 @@ const controller = require("../../controllers/client/search.controller");
 
 router.get('/', controller.index);
 
-// router.get('/detail/:slugProduct', controller.detail);
-
-
 module.exports = router;

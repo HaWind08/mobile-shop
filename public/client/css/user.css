@@ -1,0 +1,58 @@
+.user {
+    width: 65%;
+    margin: 180px auto 60px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .13);
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px 20px;
+}
+
+.user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-title {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 6px;
+    margin-bottom: 0;
+}
+
+.user .line {
+    width: 90px;
+    height: 3px;
+    background: var(--color-two);
+    margin-bottom: 30px;
+}
+
+.user input:focus {
+    box-shadow: none;
+}
+
+.button-user {
+    width: 100%;
+    border: none;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    padding: 10px 10px;
+    background: var(--color-two);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.user span {
+    background: var(--color-two);
+    color: #fff;
+}
+
+.user a {
+    font-weight: 700;
+    color: var(--color-two);
+}
+
+.user-desc {
+    font-size: 14px;
+}

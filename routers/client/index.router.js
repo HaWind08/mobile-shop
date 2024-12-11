@@ -5,11 +5,14 @@ const checkoutRouter = require("./checkout.router");
 const searchRouter = require("./search.router");
 const newsRouter = require("./news.router");
 const eventsRouter = require("./events.router");
+const userRouter = require("./user.router");
 
 const cartMiddleware = require("../../middlewares/client/cart.middleware");
+const userMiddleware = require("../../middlewares/client/user.middleware");
 
 module.exports = (app) => {
     app.use(cartMiddleware.cartId);
+    app.use(userMiddleware.infoUser);
 
     app.use("/", homeRouter);
 
@@ -24,5 +27,7 @@ module.exports = (app) => {
     app.use("/news", newsRouter);
 
     app.use("/events", eventsRouter);
+
+    app.use("/user", userRouter);
 
 };

@@ -1,0 +1,47 @@
+extends ../../layouts/default.pug 
+
+block main 
+    div.user
+        div.container
+            div.row.align-items-center
+                div.col-6
+                    h2.user-title Đăng nhập tài khoản
+                    div.line
+                    form.form-user(
+                        action="/user/login"
+                        method="POST"
+                    )
+                        .input-group.mb-4
+                            .input-group-prepend
+                                span.input-group-text#email
+                                    i.fa-regular.fa-envelope
+                            input.form-control(
+                                type="email" 
+                                placeholder="Email" 
+                                aria-label="Email" 
+                                aria-describedby="email"
+                                name="email"
+                                required
+                            )
+                        .input-group.mb-4
+                            .input-group-prepend
+                                span.input-group-text#password
+                                    i.fa-solid.fa-lock
+                            input.form-control(
+                                type="password" 
+                                placeholder="Mật khẩu" 
+                                aria-label="Mật khẩu" 
+                                aria-describedby="password"
+                                name="password"
+                                required
+                            )
+                        button.button-user(type="submit") Đăng nhập
+                        div.user-desc.d-flex.justify-content-between 
+                            div
+                                | Bạn đã có tài khoản? 
+                                a(href="/user/register") Đăng ký ngay
+                            div
+                                a(href="/user/forgot-password") Quên mật khẩu
+                div.col-6
+                    .user-image
+                    img(src="/client/images/shop-user.jpg" alt="Image")
