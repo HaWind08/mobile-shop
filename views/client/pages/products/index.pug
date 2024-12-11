@@ -7,6 +7,36 @@ block main
                 .col-12
                     h3.product-page-title Điện thoại di động thông minh, Smartphone chính hãng
             .row
+                .col-12(class="sort-title") Sắp xếp theo 
+                .col-12 
+                    div(sort class="sort")
+                        button(
+                            type="button"
+                            data-value="price-desc"
+                            sort-select
+                        ) 
+                            i.fa-solid.fa-arrow-down-wide-short.mr-1
+                            | Giá Thấp - Cao
+                        button(
+                            type="button"
+                            data-value="price-asc"
+                            sort-select
+                        ) 
+                            i.fa-solid.fa-arrow-up-short-wide.mr-1
+                            | Giá Cao - Thấp
+                        button(
+                            type="button"
+                            data-value="discountPercentage-desc"
+                            sort-select
+                        ) 
+                            i.fa-solid.fa-percent.mr-1
+                            | Khuyến mãi hot
+                        button(
+                            class="button button-clear"
+                            type="button"
+                            sort-clear
+                        ) Loại bỏ
+            .row
                 each item in products
                     .col-xl-3.col-lg-3.col-md-6.col-sm-6.col-12
                         a.product-item(href=`/products/detail/${item.slug}`)

@@ -19,6 +19,38 @@ if (buttonStocks) {
         });
     });
 }
-
-
 // end button stock
+
+// sort
+const sort = document.querySelector("[sort]");
+if (sort) {
+    let url = new URL(window.location.href);
+    const buttonSelect = sort.querySelectorAll("[sort-select]");
+    const buttonClear = sort.querySelector("[sort-clear]");
+
+    const currentValue = `${url.searchParams.get("sortKey")}-${url.searchParams.get("sortValue")}`;
+    buttonSelect.forEach(button => {
+        if (button.getAttribute("data-value") === currentValue) {
+            button.classList.add("active");
+        }
+    });
+
+    buttonSelect.forEach(button => {
+        button.addEventListener("click", () => {
+            const value = button.getAttribute("data-value")
+            const [sortKey, sortValue] = value.split("-");
+
+            url.searchParams.set("sortKey", sortKey);
+            url.searchParams.set("sortValue", sortValue);
+            window.location.href = url.href;
+        });
+    });
+
+    buttonClear.addEventListener("click", () => {
+        url.searchParams.delete("sortKey");
+        url.searchParams.delete("sortValue");
+        window.location.href = url.href;
+    });
+}
+
+// End sort

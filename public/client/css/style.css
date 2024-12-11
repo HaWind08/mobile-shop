@@ -876,3 +876,40 @@
 }
 
 /* End footer */
+
+/* sort */
+.sort {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.sort-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+button[sort-select] {
+    width: 14%;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.button-clear {
+    border: none;
+    background: var(--color-two);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+button[sort-select].active {
+    border: 1px solid var(--color-two);
+    background: #FEF2F2;
+}
+
+/* end sort */
