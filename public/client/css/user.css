@@ -27,7 +27,8 @@
     margin-bottom: 30px;
 }
 
-.user input:focus {
+.user input:focus,
+.profile input:focus {
     box-shadow: none;
 }
 
@@ -55,4 +56,26 @@
 
 .user-desc {
     font-size: 14px;
+}
+
+.profile {
+    width: 40%;
+    margin: 180px auto 60px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .13);
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px 20px;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.profile-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }

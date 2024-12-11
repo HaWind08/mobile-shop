@@ -177,7 +177,6 @@ module.exports.resetPassword = async (req, res) => {
     });
 }
 
-
 // [POST] /user/password/reset 
 module.exports.resetPasswordPost = async (req, res) => {
     const password = req.body.password;
@@ -190,3 +189,25 @@ module.exports.resetPasswordPost = async (req, res) => {
     req.flash("success", "Đổi mật khẩu thành công!");
     res.redirect("/");
 }
+
+// [GET] /user/info 
+module.exports.info = async (req, res) => {
+    res.render("client/pages/user/info.pug", {
+        pageTitle: "Thông tin tài khoản",
+    });
+}
+
+// [PATCH] /user/info/edit/:id
+module.exports.editInfo = async (req, res) => {
+    try {
+        await User.updateOne({ _id: req.params.id }, {
+            ...req.body
+        });
+
+        req.flash("success", "Cập nhật thành công!");
+    } catch (error) {
+        req.flash("error", "Cập nhật thất bại!");
+    }
+
+    res.redirect("back");
+};

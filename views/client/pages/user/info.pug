@@ -1,0 +1,40 @@
+extends ../../layouts/default.pug
+
+block main 
+    .profile
+        .container
+            .row.mb-3
+                .col-12.d-flex.align-items-center.flex-column
+                    img(src="/client/images/user-icon-profile.jpg" alt="Image")
+                    h2.profile-title Thông tin tài khoản
+                .col-12
+                    form.form-user(
+                        action=`/user/info/edit/${user.id}?_method=PATCH`
+                        method="POST"
+                    )
+                        .input-group.mb-4
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fa-regular.fa-user
+                            input.form-control(
+                                type="text" 
+                                placeholder="Họ và tên" 
+                                name="fullName"
+                                value=user.fullName
+                                required
+                            )
+                        .input-group.mb-4
+                            .input-group-prepend
+                                span.input-group-text#email
+                                    i.fa-regular.fa-envelope
+                            input.form-control(
+                                type="email" 
+                                placeholder="Email" 
+                                name="email"
+                                value=user.email
+                                required
+                            )
+                        button.button-user(type="submit") Cập nhật thông tin
+
+
+                    
