@@ -1,4 +1,4 @@
-//- include ../mixins/alert.pug
+include ../mixins/alert.pug
 
 doctype html 
 html 
@@ -11,9 +11,11 @@ html
             crossorigin="anonymous" referrerpolicy="no-referrer")
         link(rel="stylesheet", href="/admin/css/base.css")
         link(rel="stylesheet", href="/admin/css/style.css")
+        link(rel="stylesheet", href="/admin/css/alert.css")
 
     body
-        //- +alert-success(4000)
+        +alert-success(5000)
+        +alert-error(5000)
 
         include ../partials/header.pug 
 
@@ -31,5 +33,6 @@ html
         script(src="/admin/js/tinymce-config.js") 
         //- script(src="/admin/js/user.js") 
         script(src="/admin/js/script.js") 
+        script(src="/admin/js/alert.js") 
         
         
