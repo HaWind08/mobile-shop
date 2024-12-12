@@ -30,30 +30,28 @@ block main
                     p Số lượng: <b>#{statistic.product.total}</b>
                     p Hoạt động: <b>#{statistic.product.active}</b>
                     p Dừng hoạt động: <b>#{statistic.product.inactive}</b>
-        //- .col-6 
-        //-     .card.mb-4(style="background: #FFF4DE") 
-        //-         .card-header(style="background: rgb(255, 148, 122)")  
-        //-             i.fa-solid.fa-compact-disc.mr-3(style="color: #fff") 
-        //-             span Danh sách phim sắp chiếu
-        //-         .card-body
-        //-             p Số lượng: <b>#{statistic.movieUpcoming.total}</b>
-        //-             p Hoạt động: <b>#{statistic.movieUpcoming.active}</b>
-        //-             p Dừng hoạt động: <b>#{statistic.movieUpcoming.inactive}</b>
-        //- .col-6 
-        //-     .card.mb-4(style="background: #DCFCE7") 
-        //-         .card-header(style="background: rgb(60, 216, 86)")  
-        //-             i.fa-solid.fa-mug-hot.mr-3(style="color: #fff") 
-        //-             span Danh sách bắp nước
-        //-         .card-body
-        //-             p Số lượng: <b>#{statistic.popcorn.total}</b>
-        //-             p Hoạt động: <b>#{statistic.popcorn.active}</b>
-        //-             p Dừng hoạt động: <b>#{statistic.popcorn.inactive}</b>
-        //- .col-6 
-        //-     .card.mb-4(style="background: #F0E5FC") 
-        //-         .card-header(style="background: rgb(191, 131, 255)") 
-        //-             i.fa-solid.fa-circle-user.mr-3(style="color: #fff") 
-        //-             span Tài khoản client
-        //-         .card-body
-        //-             p Số lượng: <b>#{statistic.user.total}</b>
-        //-             p Hoạt động: <b>#{statistic.user.active}</b>
-        //-             p Dừng hoạt động: <b>#{statistic.user.inactive}</b>
+        .col-6 
+            .card.mb-4(style="background: #FFF4DE") 
+                .card-header(style="background: rgb(255, 148, 122)")  
+                    i.fa-solid.fa-compact-disc.mr-3(style="color: #fff") 
+                    span Danh sách đơn hàng
+                .card-body
+                    p Số lượng: <b>#{statistic.order.total}</b>
+        .col-6 
+            .card.mb-4(style="background: #DCFCE7") 
+                .card-header(style="background: rgb(60, 216, 86)")  
+                    i.fa-solid.fa-mug-hot.mr-3(style="color: #fff") 
+                    span Tài khoản admin
+                .card-body
+                    p Số lượng: <b>#{statistic.accounts.total}</b>
+                    p Hoạt động: <b>#{statistic.accounts.active}</b>
+                    p Dừng hoạt động: <b>#{statistic.accounts.inactive}</b>
+        .col-6 
+            .card.mb-4(style="background: #F0E5FC") 
+                .card-header(style="background: rgb(191, 131, 255)") 
+                    i.fa-solid.fa-circle-user.mr-3(style="color: #fff") 
+                    span Tài khoản client
+                .card-body
+                    p Số lượng: <b>#{statistic.user.total}</b>
+                    p Hoạt động: <b>#{statistic.user.active}</b>
+                    p Dừng hoạt động: <b>#{statistic.user.inactive}</b>

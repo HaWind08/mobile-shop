@@ -28,7 +28,7 @@ module.exports.dashboard = async (req, res) => {
         },
     };
 
-    // movie
+    // product
     statistic.product.total = await Product.countDocuments({
         deleted: false
     });
@@ -43,50 +43,50 @@ module.exports.dashboard = async (req, res) => {
         status: "inactive"
     });
 
-    // // movie upcoming
-    // statistic.movieUpcoming.total = await MovieUpcoming.countDocuments({
-    //     deleted: false
-    // });
+    // order
+    statistic.order.total = await Order.countDocuments({
+        deleted: false
+    });
 
-    // statistic.movieUpcoming.active = await MovieUpcoming.countDocuments({
-    //     deleted: false,
-    //     status: "active"
-    // });
+    statistic.order.active = await Order.countDocuments({
+        deleted: false,
+        status: "active"
+    });
     
-    // statistic.movieUpcoming.inactive = await MovieUpcoming.countDocuments({
-    //     deleted: false,
-    //     status: "inactive"
-    // });
+    statistic.order.inactive = await Order.countDocuments({
+        deleted: false,
+        status: "inactive"
+    });
 
-    // // popcorn
-    // statistic.popcorn.total = await Popcorn.countDocuments({
-    //     deleted: false
-    // });
+    // popcorn
+    statistic.accounts.total = await Account.countDocuments({
+        deleted: false
+    });
 
-    // statistic.popcorn.active = await Popcorn.countDocuments({
-    //     deleted: false,
-    //     status: "active"
-    // });
+    statistic.accounts.active = await Account.countDocuments({
+        deleted: false,
+        status: "active"
+    });
     
-    // statistic.popcorn.inactive = await Popcorn.countDocuments({
-    //     deleted: false,
-    //     status: "inactive"
-    // });
+    statistic.accounts.inactive = await Account.countDocuments({
+        deleted: false,
+        status: "inactive"
+    });
 
-    // // user
-    // statistic.user.total = await User.countDocuments({
-    //     deleted: false
-    // });
+    // user
+    statistic.user.total = await User.countDocuments({
+        deleted: false
+    });
 
-    // statistic.user.active = await User.countDocuments({
-    //     deleted: false,
-    //     status: "active"
-    // });
+    statistic.user.active = await User.countDocuments({
+        deleted: false,
+        status: "active"
+    });
     
-    // statistic.user.inactive = await User.countDocuments({
-    //     deleted: false,
-    //     status: "inactive"
-    // });
+    statistic.user.inactive = await User.countDocuments({
+        deleted: false,
+        status: "inactive"
+    });
 
     res.render("admin/pages/dashboard/index.pug", {
         pageTitle: "Trang tổng quan",
