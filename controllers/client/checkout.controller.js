@@ -2,7 +2,7 @@ const Cart = require("../../models/cart.model");
 const Product = require("../../models/product.model");
 const Order = require("../../models/order.model");
 
-const productHelper = require("../../helpers/product");
+const productHelper = require("../../helpers/client/product");
 
 // [GET] /checkout 
 module.exports.index = async (req, res) => {

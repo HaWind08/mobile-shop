@@ -1,6 +1,6 @@
 const Product = require("../../models/product.model");
 
-const productHelper = require("../../helpers/product");
+const productHelper = require("../../helpers/client/product");
 
 // [GET] /products
 module.exports.index = async (req, res) => {

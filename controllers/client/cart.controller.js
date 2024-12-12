@@ -1,7 +1,7 @@
 const Cart = require("../../models/cart.model");
 const Product = require("../../models/product.model");
 
-const productHelper = require("../../helpers/product");
+const productHelper = require("../../helpers/client/product");
 
 // [GET] /cart
 module.exports.index = async (req, res) => {

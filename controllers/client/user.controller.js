@@ -3,8 +3,8 @@ const User = require("../../models/user.model");
 const ForgotPassword = require("../../models/forgot-password.model");
 const Cart = require("../../models/cart.model");
 
-const generateHelper = require("../../helpers/generate");
-const sendMailHelper = require("../../helpers/sendMail");
+const generateHelper = require("../../helpers/client/generate");
+const sendMailHelper = require("../../helpers/client/sendMail");
 
 // [GET] /user/register 
 module.exports.register = async (req, res) => {
