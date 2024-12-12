@@ -75,6 +75,7 @@ module.exports.detail = async (req, res) => {
 
         res.render("admin/pages/products/detail.pug", {
             pageTitle: "Chi tiết sản phẩm",
+            currentPage: "product",
             product: product
         });
     } catch (error) {
@@ -95,6 +96,7 @@ module.exports.edit = async (req, res) => {
 
         res.render("admin/pages/products/edit.pug", {
             pageTitle: "Chỉnh sửa sản phẩm",
+            currentPage: "product",
             product: product
         });
     } catch (error) {
@@ -125,3 +127,14 @@ module.exports.editPatch = async (req, res) => {
 
     res.redirect("back");
 }
+
+// [DELTE] /admin/products/delete/:id
+module.exports.delete = async (req, res) => {
+    const id = req.params.id;
+    await Product.updateOne({ _id: id }, {
+        deleted: true,
+    });
+
+    req.flash("success", `Đã xóa thành công sản phẩm!`);
+    res.redirect("back");
+};

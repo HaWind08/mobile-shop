@@ -31,7 +31,7 @@ block main
                             th Vị trí
                             th Trạng thái
                             th Người tạo
-                            th Người cập nhật
+                            //- th Người cập nhật
                             th Hoạt động
                     tbody 
                         tbody
@@ -76,12 +76,12 @@ block main
                                         p #{item.accountFullName}
                                         p 
                                             +formatDateTime(item.createdBy.createdAt)
-                                    td 
-                                        //- - const updatedBy = item.updatedBy.slice(-1)[0]
-                                        //- if(updatedBy)
-                                        //-     p #{updatedBy.accountFullName}
-                                        //-     p 
-                                        //-         +formatDateTime(updatedBy.updatedAt)
+                                    //- td 
+                                    //-     - const updatedBy = item.updatedBy.slice(-1)[0]
+                                    //-     if(updatedBy)
+                                    //-         p #{updatedBy.accountFullName}
+                                    //-         p 
+                                    //-             +formatDateTime(updatedBy.updatedAt)
                                     td 
                                         a(
                                             href=`${prefixAdmin}/products/detail/${item.id}`
@@ -98,3 +98,10 @@ block main
                                         ) Xóa
 
     +pagination(pagination)
+
+    form(
+        action=""
+        method="POST"
+        id="form-delete-item"
+        data-path=`${prefixAdmin}/products/delete`
+    )

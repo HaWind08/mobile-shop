@@ -1,20 +1,3 @@
-// Show alert
-const showAlert = document.querySelector("[show-alert]");
-if (showAlert) {
-    const time = parseInt(showAlert.getAttribute("data-time"));
-    const closeAlert = showAlert.querySelector("[close-alert]");
-
-    setTimeout(() => {
-        showAlert.classList.add("alert-hidden");
-    }, time);
-
-    closeAlert.addEventListener("click", () => {
-        showAlert.classList.add("alert-hidden");
-    });
-}
-// End Show alert
-
-
 // Eye login
 const eyeOpen = document.querySelector(".eye-loginAdmin");
 const eyeClose = document.querySelector(".eye-slash-loginAdmin");
@@ -74,3 +57,26 @@ buttonsPagination.forEach(button => {
     })
 })
 // End Pagination
+
+// Delete Product(Item)
+const buttonDelete = document.querySelectorAll("[button-delete]");
+if (buttonDelete.length > 0) {
+    const formDeleteItem = document.querySelector("#form-delete-item");
+    const path = formDeleteItem.getAttribute("data-path");
+
+    buttonDelete.forEach(button => {
+        button.addEventListener("click", () => {
+            const isConfirm = confirm("Bạn có chắc chắn muốn xóa không?");
+
+            if (isConfirm) {
+                const id = button.getAttribute("data-id");
+
+                const action = `${path}/${id}?_method=DELETE`;
+                formDeleteItem.action = action
+
+                formDeleteItem.submit();
+            }
+        });
+    })
+};
+// End Delete Product(Item)

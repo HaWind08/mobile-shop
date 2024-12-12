@@ -94,6 +94,10 @@ a:hover {
     color: #5A6A85;
 }
 
+.table-user {
+    text-align: center;
+}
+
 .badge-successCreate {
     color: #E6FFFA;
     background-color: #13DEB9;
