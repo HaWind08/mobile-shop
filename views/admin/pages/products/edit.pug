@@ -2,11 +2,11 @@ extends ../../layouts/default.pug
 
 block main 
 
-    h1(class="mb-4") Thêm sản phẩm mới
+    h1(class="mb-4") Chỉnh sửa sản phẩm
 
     form(
-        action=`${prefixAdmin}/products/create`
-        id="form-create-product"
+        action=`${prefixAdmin}/products/edit/${product.id}/?_method=PATCH`
+        id="form-edit-product"
         method="POST"
         enctype="multipart/form-data"
     )
@@ -18,7 +18,8 @@ block main
                 class="form-control"
                 id="title"
                 name="title"
-                required 
+                required
+                value=product.title 
             )
         div(class="form-group")
             label(for="product_category_id") Danh mục
@@ -29,12 +30,12 @@ block main
                 class="form-control"
             ) 
                 option(value="") -- Chọn danh mục --
-                option(value="Iphone") Iphone
-                option(value="Samsung") Samsung
-                option(value="Xiaomi") Xiaomi
-                option(value="Oppo") Oppo
-                option(value="Tecno") Tecno
-                option(value="Realme") Realme
+                option(value="Iphone" selected=(product.product_category_id == "Iphone" ? true : false)) Iphone
+                option(value="Samsung" selected=(product.product_category_id == "Samsung" ? true : false)) Samsung
+                option(value="Xiaomi" selected=(product.product_category_id == "Xiaomi" ? true : false)) Xiaomi
+                option(value="Oppo" selected=(product.product_category_id == "Oppo" ? true : false)) Oppo
+                option(value="Tecno" selected=(product.product_category_id == "Tecno" ? true : false)) Tecno
+                option(value="Realme" selected=(product.product_category_id == "Realme" ? true : false)) Realme
         div(class="form-group form-check form-check-inline")
             input(
                 type="radio"
@@ -42,6 +43,7 @@ block main
                 id="featured1"
                 name="featured"
                 value="1"
+                checked=(product.featured == "1" ? true : false)
             )
             label(for="featured1" class="form-check-label") Nổi bật
         div(class="form-group form-check form-check-inline")
@@ -51,7 +53,7 @@ block main
                 id="featured0"
                 name="featured"
                 value="0"
-                checked
+                checked=(product.featured == "0" ? true : false)
             )
             label(for="featured0" class="form-check-label") Không
         div(class="form-group")
@@ -62,7 +64,7 @@ block main
                 id="desc"
                 name="description"
                 rows="5"
-            )
+            ) #{product.description}
         div(class="form-wrap")
             div(class="form-group width-input")
                 label(for="price") Giá
@@ -72,8 +74,8 @@ block main
                     class="form-control"
                     id="price"
                     name="price"
-                    value="0"
                     min="0"
+                    value=product.price
                 )
             div(class="form-group width-input")
                 label(for="discount") % Giảm giá
@@ -83,8 +85,8 @@ block main
                     class="form-control"
                     id="discount"
                     name="discountPercentage"
-                    value="0"
                     min="0"
+                    value=product.discountPercentage
                 )
             div(class="form-group width-input")
                 label(for="stock") Số lượng
@@ -94,8 +96,8 @@ block main
                     class="form-control"
                     id="stock"
                     name="stock"
-                    value="0"
                     min="0"
+                    value=product.stock
                 )
         div(
             class="form-group"
@@ -111,7 +113,7 @@ block main
                 upload-image-input
             )
             img(
-                src=""
+                src=product.thumbnail
                 upload-image-preview
                 class="image-preview"
             )
@@ -128,6 +130,7 @@ block main
                 name="position"
                 placeholder="Tự động tăng"
                 min="1"
+                value=product.position
             )
         div(class="form-group form-check form-check-inline")
             input(
@@ -136,7 +139,7 @@ block main
                 id="statusActive"
                 name="status"
                 value="active"
-                checked
+                checked=(product.status == "active" ? true : false)
             )
             label(for="statusActive" class="form-check-label") Hoạt động 
         div(class="form-group form-check form-check-inline")
@@ -146,11 +149,12 @@ block main
                 id="statusActive"
                 name="status"
                 value="inactive"
+                checked=(product.status == "inactive" ? true : false)
             )
             label(for="statusActive" class="form-check-label") Dừng hoạt động
         div(class="form-group")
             button(
                 type="submit"
                 class="btn btn-primary"
-            ) Tạo mới
+            ) Cập nhật
         
